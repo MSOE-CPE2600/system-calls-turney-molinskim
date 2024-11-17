@@ -1,5 +1,8 @@
-// Name, etc
-
+/************************************************
+* Name: Marshall Molinski
+* Assignment Name: Lab 9 - System Calls
+* Section: CPE2600 111
+************************************************/
 // pmod.c
 #define _GNU_SOURCE
 #include <stdio.h>

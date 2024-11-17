@@ -1,5 +1,8 @@
-// Name, etc
-
+/************************************************
+* Name: Marshall Molinski
+* Assignment Name: Lab 9 - System Calls
+* Section: CPE2600 111
+************************************************/
 // pinfo.c
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -42,14 +45,14 @@ int main(int argc, char *argv[]) {
     int policy;
     struct sched_param param;
 
-    // Determine if a process ID is provided
+    // determine if a process ID is provided
     if (argc > 1) {
         pid = atoi(argv[1]);
     } else {
-        pid = getpid(); // Default to current process ID
+        pid = getpid(); //Default to current process ID
     }
 
-    // Get the priority of the specified process
+    // get the priority of the specified process
     errno = 0;
     priority = getpriority(PRIO_PROCESS, pid);
     if (errno != 0) {
@@ -65,6 +68,5 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     print_scheduler(policy);
-
     return 0;
 }

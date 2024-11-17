@@ -1,5 +1,8 @@
-// Name, etc
-
+/************************************************
+* Name: Marshall Molinski
+* Assignment Name: Lab 9 - System Calls
+* Section: CPE2600 111
+************************************************/
 // finfo.c
 
 #define _GNU_SOURCE
@@ -50,7 +53,6 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
         return 1;
     }
-
     const char *filename = argv[1];
     struct stat file_info;
 
@@ -60,7 +62,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    // Print file type
+    //Print file type
     print_file_type(file_info.st_mode);
 
     // Print file permissions
@@ -77,6 +79,5 @@ int main(int argc, char *argv[]) {
     struct tm *time_info = localtime(&file_info.st_mtime);
     strftime(time_buffer, sizeof(time_buffer), "%Y-%m-%d %H:%M:%S", time_info);
     printf("Last modified: %s\n", time_buffer);
-
     return 0;
 }
