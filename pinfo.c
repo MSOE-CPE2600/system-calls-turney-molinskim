@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
     pid_t pid;
     int priority;
     int policy;
-    struct sched_param param;
+ 
 
     // determine if a process ID is provided
     if (argc > 1) {
